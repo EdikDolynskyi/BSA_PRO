@@ -1,0 +1,99 @@
+<div ng-controller="loginCtrl as Ctrl">
+    <form name="loginForm" novalidate">
+        <fieldset class="form-horizontal">
+            <legend>LogIn</legend>
+
+
+            <div class="form-group"><label class="col-md-3 col-sm-3 col-xs-3 control-label">User Name</label>
+                <div class="col-md-9 col-sm-9 col-xs-9">
+                    <input class='form-control' ng-model="Ctrl.user.name" type="text" name="name" ng-minlength="2" required/>
+
+                    <span class="error" ng-show="loginForm.name.$dirty && loginForm.name.$invalid">
+                        <span ng-show="loginForm.name.$error.required">Username is required
+                        </span>
+                        <span ng-show="loginForm.name.$error.minlength">Minimal length of Username is 2
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+
+            <div class="form-group"><label class="col-md-3 col-sm-3 col-xs-3 control-label">Surname</label>
+                <div class="col-md-9 col-sm-9 col-xs-9">
+                    <input class='form-control' ng-model="Ctrl.user.surname" type="text" name="surname" ng-minlength="2" required>
+
+                    <div class="error" ng-show="loginForm.surname.$dirty && loginForm.surname.$invalid">
+                        <span ng-show="loginForm.surname.$error.required">Username is required
+                        </span>
+                        <span ng-show="loginForm.surname.$error.minlength">Minimal length of Username is 3
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="form-group"><label class="col-md-3 col-sm-3 col-xs-3 control-label">Email</label>
+                <div class="col-md-9 col-sm-9 col-xs-9">
+                    <input class='form-control' ng-model="Ctrl.user.email" type="email" name="email" ng-minlength="2" required>
+
+                    <div class="error" ng-show="loginForm.email.$dirty && loginForm.email.$invalid">
+                        <span ng-show="loginForm.email.$error.required">Username is required
+                        </span>
+                        <span ng-show="loginForm.email.$error.email">Email invalid
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="form-group"><label class="col-md-3 col-sm-3 col-xs-3 control-label">User Age</label>
+                <div class="col-md-9 col-sm-9 col-xs-9">
+                    <input class='form-control' ng-model="LoginCtrl.user.age" type="number" name="age" ng-minlength="1" required>
+
+                    <div class="error" ng-show="loginForm.age.$dirty && loginForm.age.$invalid">
+                        <span ng-show="loginForm.age.$error.required">Username is required
+                        </span>
+                        <span ng-show="loginForm.age.$error.minlength">Minimal length of Username is 3
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group"><label class="col-md-3 col-sm-3 col-xs-3 control-label">User Password</label>
+                <div class="col-md-9 col-sm-9 col-xs-9">
+                    <input class='form-control' ng-model="Ctrl.user.password" type="password" name="password" ng-minlength="3" required>
+
+                    <div class="error" ng-show="loginForm.password.$dirty && loginForm.password.$invalid">
+                        <span ng-show="loginForm.password.$error.required">Username is required
+                        </span>
+                        <span ng-show="loginForm.password.$error.minlength">Minimal length of Username is 3
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group"><label class="col-md-3 col-sm-3 col-xs-3 control-label">Confirm Password</label>
+                <div class="col-md-9 col-sm-9 col-xs-9">
+                    <input class='form-control' ng-model="Ctrl.confPassword" type="password" name="confPassword" ng-minlength="3" required>
+
+                    <div class="error" ng-show="loginForm.confPassword.$dirty && Ctrl.user.password != Ctrl.confPassword">
+                        <span ng-show="Ctrl.user.password != Ctrl.confPassword">
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group"><label class="col-md-2 col-sm-2 col-xs-2"></label>
+
+                <div class="col-md-10 col-sm-10 col-xs-10">
+                    <div ng-click="LoginCtrl.login()" class="btn btn-default">Login</div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

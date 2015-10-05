@@ -1,0 +1,32 @@
+<div ng-controller="settingsCtrl as Ctrl">
+    <div>
+        <form name="settingsForm">
+            <h4>User settings
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="nickNameRadioDefault" ng-model="Ctrl.nickNameRadio" value="default"/> Use NickName "Pishti"
+                    </label>
+                </div>
+
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="nickNameRadioCustom" ng-model="Ctrl.nickNameRadio" value="custom"/> Use Custom NickName
+                    </label>
+                    <input id="nickname" name="nickname" type="text" placeholder="Your nickname"
+                           ng-show="Ctrl.nickNameRadio == 'custom'" ng-model="Ctrl.user.nickName" class="form-control input-md"/>
+                </div>
+
+                <label>
+                    <input class="form-control" type="text" name="hobbies" ng-model="Ctrl.newHobby" placeholder="enter your hobby"
+                           ng-keypress="($event.which === 13) ? Ctrl.addHobby():0" />
+                </label>
+
+                <ul class="list-group">
+                    <li ng-repeat="hobby in Ctrl.hobbies track by $index" class="list-group-item">
+                        {{hobby}}
+                    </li>
+                </ul>
+            </h4>
+        </form>
+    </div>
+</div>>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="core.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.js"></script>
+</head>
+<body>
+<div class="container" ng-controller="MainCtrl as ctrl">
+    <div class="player text-center">
+        <button type="button" id="button_fbw" class="btn" ng-click='ctrl.buttonRewindPress()'>
+            <i class="fa fa-fast-backward"></i>
+        </button>
+
+        <button type="button" id="button_bw" class="btn" ng-click='ctrl.buttonBackPress()'>
+            <i class="fa fa-backward"></i>
+        </button>
+
+        <button type="button" class="btn" ng-click='ctrl.showListBox = !ctrl.showListBox'>
+            <i class="fa fa-bars"></i>
+        </button>
+
+        <button type="button" id="button_fw" class="btn" ng-click='ctrl.buttonForwardPress()'>
+            <i class="fa fa-forward"></i>
+        </button>
+
+        <button type="button" id="button_ffw" class="btn" ng-click='ctrl.buttonFastforwardPress()'>
+            <i class="fa fa-fast-forward"></i>
+        </button>
+    </div>
+    <div class="list-block" ng-show="ctrl.showListBox">
+        <ul class="list-group friends-list">
+            <li class="list-group-item no-padding">
+                <input class="form-control" type="text" name="friend" ng-model="ctrl.newFriend"
+                       placeholder="Enter the name of your friend"
+                       ng-keypress="($event.which === 13) ? ctrl.addFriend():0"/>
+            </li>
+            <li ng-repeat="friend in ctrl.friends track by $index" class="list-group-item">
+                {{friend}}
+                <button type="button" class="close pull-right" aria-hidden="true" ng-click="ctrl.deleteFriend($index)">×</button>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="container" ng-controller="DisplayCtrl as ctrl">
+    <div>
+        <p class="text-center display" ng-bind="ctrl.content"></p>
+    </div>
+</div>
+
+<p class="text-center posted-by">Created by: Eduard Dolynskyi</p>
+
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="mainController.js"></script>
+<script type="text/javascript" src="displayController.js"></script>
+</body>
+</html>

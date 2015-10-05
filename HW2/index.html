@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="core.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.js"></script>
+</head>
+<body>
+
+
+<div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+        <div>
+            <select class="form-control col-md" ng-model='mainCtrl.template' name="category">
+                <option value="login.html">Login Page</option>
+                <option value="settings.html">User Settings</option>
+            </select>
+        </div>
+
+        <div  ng-controller="mainCtrl">
+            <div class="panel panel-default ">
+                <div class="panel-body">
+                    <div class="slide-animate-container">
+                        <div class="slide-animate" ng-include src = "mainCtrl.template"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="posted-by footer col-lg-3 col-lg-offset-3">Created by: Eduard Dolynskyi</a></div>
+</div>
+
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="loginController.js"></script>
+<script type="text/javascript" src="settingsController.js"></script>
+</body>
+</html>

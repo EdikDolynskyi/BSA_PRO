@@ -1,0 +1,28 @@
+body
+{
+    background: url('http://farm3.staticflickr.com/2832/12303719364_c25cecdc28_b.jpg') fixed;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+}
+
+.posted-by
+{
+    position: absolute;
+    bottom: 26px;
+    margin: 0 auto;
+    color: #FFF;
+    background-color: rgba(0, 0, 0, 0.66);
+    padding: 10px;
+    left: 37%;
+}
+label{
+    color: #ffffff;
+}
+
+.error{
+    color: #ff4e5e;
+}
+.panel{
+    background-color : rgba(144, 144, 144, 0.5);
+}

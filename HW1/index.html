@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="core.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.js"></script>
+</head>
+<body>
+<div class="container" ng-controller="myCtrl">
+    <div class="row">
+            <div class="wrap">
+                <p class="form-title">
+                    Binary PRO</p>
+                <form class="enterValue">
+                    <input type="text" placeholder="Enter some text" ng-model="value" ng-change="change()" class="text" />
+                    <br>
+                    <input type="text" placeholder="Result" class="text" value="{{result}}" readonly/>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="posted-by">Created by: Eduard Dolynskyi</a></div>
+</div>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="Controller.js"></script>
+</body>
+</html>
